@@ -98,6 +98,16 @@ INFO  k.s.s.m.consumer.AggregationConsumer - key: 2, value: 1960
 ...
 ```
 
+## How to run kafka-mirror-maker
+
+```bash
+$ cd mirror-config/
+$ kafka-mirror-maker.sh \
+    --consumer.config consumer.properties \
+    --producer.config producer.properties \
+    --whitelist my-event
+```
+
 ## Reference
 
 * https://kafka.apache.org/documentation/#basic_ops_mirror_maker
