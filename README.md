@@ -124,7 +124,9 @@ INFO  k.s.s.m.consumer.AggregationConsumer - key: 2, value: 1960
 ## How to run kafka-mirror-maker
 
 ```bash
+$ ./gradlew build
 $ cd mirror-config/
+$ export CLASSPATH="../build/libs/kafka-streams-mirror-sample.jar"
 $ kafka-mirror-maker.sh \
     --consumer.config consumer.properties \
     --producer.config producer.properties \
