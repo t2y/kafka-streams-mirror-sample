@@ -1,0 +1,16 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        jcenter()
+        mavenLocal()
+        maven {
+            name "JCenter Gradle Plugins"
+            url  "https://dl.bintray.com/gradle/gradle-plugins"
+        }
+        maven {
+            url = 'https://packages.confluent.io/maven/'
+        }
+    }
+}
+
+rootProject.name = 'kafka-streams-mirror-sample'

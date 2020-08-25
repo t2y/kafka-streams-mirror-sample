@@ -1,0 +1,70 @@
+plugins {
+    id 'application'
+    id 'java'
+
+    id 'com.commercehub.gradle.plugin.avro' version '0.21.0'
+    id 'com.github.sherter.google-java-format' version '0.9'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url = 'https://packages.confluent.io/maven/'
+    }
+}
+
+dependencies {
+    // for type inference
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+
+    // for logging
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'org.slf4j:slf4j-api:1.7.26'
+
+    // kafka and kafka streams
+    implementation 'org.apache.kafka:kafka-streams:2.5.0'
+    implementation 'org.apache.kafka:kafka-clients:2.5.0'
+    testImplementation 'org.apache.kafka:kafka-streams-test-utils:2.5.0'
+
+    // avro
+    implementation 'org.apache.avro:avro:1.9.2'
+    implementation 'io.confluent:kafka-streams-avro-serde:5.5.1'
+    implementation 'io.confluent:kafka-avro-serializer:5.5.1'
+
+    // others
+    implementation 'com.google.guava:guava:29.0-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+}
+
+compileJava.dependsOn tasks.googleJavaFormat
+
+test {
+    useJUnitPlatform()
+}
+
+avro {
+  createOptionalGetters = true
+}
+
+application {
+    mainClassName = 'kafka.streams.sample.mirror.Main'
+}
+
+task runEventProducer(type: JavaExec) {
+    group = 'Execution'
+    description = 'Run event producer main class'
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'kafka.streams.sample.mirror.producer.EventProducer'
+}
+
+task runAggregationConsumer(type: JavaExec) {
+    group = 'Execution'
+    description = 'Run aggregation consumer main class'
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'kafka.streams.sample.mirror.consumer.AggregationConsumer'
+}
