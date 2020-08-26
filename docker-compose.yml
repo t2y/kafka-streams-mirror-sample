@@ -41,13 +41,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker1-dc1:29091,PLAINTEXT_HOST://localhost:9091
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc1:29091
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc1:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   broker2-dc1:
     image: confluentinc/cp-server:5.5.1
@@ -67,13 +62,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker2-dc1:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc1:29091
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc1:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   broker3-dc1:
     image: confluentinc/cp-server:5.5.1
@@ -93,13 +83,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker3-dc1:29093,PLAINTEXT_HOST://localhost:9093
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc1:29091
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc1:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   broker1-dc2:
     image: confluentinc/cp-server:5.5.1
@@ -119,13 +104,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker1-dc2:29094,PLAINTEXT_HOST://localhost:9094
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc2:29094
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc2:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   broker2-dc2:
     image: confluentinc/cp-server:5.5.1
@@ -145,13 +125,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker2-dc2:29095,PLAINTEXT_HOST://localhost:9095
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc2:29094
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc2:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   broker3-dc2:
     image: confluentinc/cp-server:5.5.1
@@ -171,13 +146,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker3-dc2:29096,PLAINTEXT_HOST://localhost:9096
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 60000
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-      # Confluent Metrics Reporter for Control Center Cluster Monitoring
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker1-dc2:29094
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper-dc2:2182
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 3
-      CONFLUENT_METRICS_ENABLE: 'true'
 
   schema-registry-dc1:
     image: confluentinc/cp-schema-registry:5.5.1
