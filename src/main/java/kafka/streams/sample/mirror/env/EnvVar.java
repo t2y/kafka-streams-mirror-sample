@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum EnvVar {
+  STATE_CLEANUP(System.getenv().getOrDefault("STATE_CLEANUP", "false")),
   BOOTSTRAP_SERVERS(System.getenv().getOrDefault("BOOTSTRAP_SERVERS", Constant.BOOTSTRAP_SERVERS));
 
   private final String value;

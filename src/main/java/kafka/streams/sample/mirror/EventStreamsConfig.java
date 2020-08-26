@@ -34,6 +34,7 @@ public class EventStreamsConfig {
     p.put(ConsumerConfig.ALLOW_AUTO_CREATE_TOPICS_CONFIG, false);
     p.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, true);
     p.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, Constant.SCHEMA_REGISTRY_URL);
+    p.put(StreamsConfig.mainConsumerPrefix(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG), "earliest");
     return p;
   }
 
