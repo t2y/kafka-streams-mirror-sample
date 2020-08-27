@@ -133,6 +133,16 @@ $ kafka-mirror-maker.sh \
     --whitelist my-event
 ```
 
+### for changelog mirroring
+
+```bash
+$ export CLASSPATH="../build/libs/kafka-streams-mirror-sample.jar"
+$ kafka-mirror-maker.sh \
+    --consumer.config consumer-changelog.properties \
+    --producer.config producer-changelog.properties \
+    --whitelist event-mirror-streams-user-id-aggregation-changelog
+```
+
 ## Reference
 
 * https://kafka.apache.org/documentation/#basic_ops_mirror_maker

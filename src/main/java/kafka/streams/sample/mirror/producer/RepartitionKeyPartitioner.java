@@ -2,10 +2,8 @@ package kafka.streams.sample.mirror.producer;
 
 import java.nio.ByteBuffer;
 import java.util.Map;
-
-import lombok.val;
 import lombok.extern.slf4j.Slf4j;
-
+import lombok.val;
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.clients.producer.internals.DefaultPartitioner;
 import org.apache.kafka.common.Cluster;
