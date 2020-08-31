@@ -23,6 +23,8 @@ zookeeper-dc1         /etc/confluent/docker/run   Up      0.0.0.0:2181->2181/tcp
 zookeeper-dc2         /etc/confluent/docker/run   Up      2181/tcp, 0.0.0.0:2182->2182/tcp, 2888/tcp, 3888/tcp
 ```
 
+![](https://github.com/t2y/kafka-streams-mirror-sample/raw/master/kafka-clusters1.png)
+
 Confirm kafka cluster logs.
 
 ```bash
